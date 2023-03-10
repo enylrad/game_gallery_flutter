@@ -1,0 +1,21 @@
+name: common_dependencies
+description: This package aims to provide common dependencies between modules
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  navigator:
+    path: ../navigator/
+
+  ## Packages
+  freezed_annotation: ^2.2.0
+  flutter_svg: ^2.0.3
+  flutter_bloc: ^8.1.2
+  intl: ^0.17.0

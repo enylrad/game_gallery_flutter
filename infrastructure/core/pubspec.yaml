@@ -1,0 +1,19 @@
+name: core
+description: A core package
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  equatable: ^2.0.5
+  get_it: ^7.2.0
+  flat: ^0.4.1
+
+  common_dependencies:
+    path: ../common_dependencies/
