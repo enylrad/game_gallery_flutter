@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-String getTransalationFilePath({
+String getTranslationFilePath({
   required Locale locale,
   String? packageName,
 }) =>
