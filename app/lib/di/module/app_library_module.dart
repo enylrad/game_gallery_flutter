@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:common_dependencies/common_dependencies.dart';
 import 'package:core/core.dart';
 
 /// Register here all the third party libraries so they can be provided
@@ -9,5 +10,7 @@ class AppLibraryModule implements InjectionModule {
   FutureOr<void> registerDependencies({
     required Injector injector,
     required BuildConfig buildConfig,
-  }) async {}
+  }) async {
+    injector.registerSingleton(AppRouter());
+  }
 }

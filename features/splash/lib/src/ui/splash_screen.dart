@@ -13,19 +13,17 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-  final LoginNavigator _loginNavigator = AppInjector.I.get();
-  final HomeNavigator _homeNavigator = AppInjector.I.get();
-
   final SplashCubit _cubit = AppInjector.I.get();
+  final _appRouter = AppInjector.I.get<AppRouter>();
 
   @override
   Widget build(BuildContext context) => BlocConsumer<SplashCubit, SplashState>(
         bloc: _cubit,
         listener: (_, state) {
           if (state.isUserAuthenticated) {
-            _homeNavigator.navigateToRoot(context);
+            _appRouter.navigate(const HomeRoute());
           } else {
-            _loginNavigator.navigateToRoot(context);
+            _appRouter.navigate(const LoginRoute());
           }
         },
         builder: (_, state) => Scaffold(

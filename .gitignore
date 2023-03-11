@@ -45,3 +45,4 @@ build/
 
 *.g.dart
 *.freezed.dart
+*.gr.dart

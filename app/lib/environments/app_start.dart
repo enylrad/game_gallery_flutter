@@ -4,13 +4,13 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:home/home.dart';
-import 'package:login/login.dart';
 import 'package:game_gallery/app/my_app.dart';
 import 'package:game_gallery/di/app_component.dart';
 import 'package:game_gallery/resolvers/app_resolver.dart';
 import 'package:game_gallery/resolvers/library_resolver.dart';
-import 'package:splash/go_splash.dart';
+import 'package:home/home.dart';
+import 'package:login/login.dart';
+import 'package:splash/splash.dart';
 
 abstract class AppStart {
   final BuildConfig buildConfig;
@@ -35,8 +35,6 @@ abstract class AppStart {
   Future<void> startApp() async {
     WidgetsFlutterBinding.ensureInitialized();
 
-    final routerModules = <RouterModule>[];
-
     final delegates = <LocalizationsDelegate>[
       GlobalMaterialLocalizations.delegate,
       GlobalWidgetsLocalizations.delegate,
@@ -45,10 +43,6 @@ abstract class AppStart {
     final injections = <InjectionModule>[];
 
     for (final resolver in resolvers) {
-      if (resolver.routerModule != null) {
-        routerModules.add(resolver.routerModule!);
-      }
-
       if (resolver.localeDelegate != null) {
         delegates.add(resolver.localeDelegate!);
       }
@@ -67,7 +61,6 @@ abstract class AppStart {
       () async {
         runApp(
           MyApp(
-            routes: routerModules,
             localeDelegates: delegates,
           ),
         );
