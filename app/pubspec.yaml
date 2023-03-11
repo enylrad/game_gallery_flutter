@@ -12,10 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  home:
-    path: ../features/home/
-  login:
-    path: ../features/login/
   splash:
     path: ../features/splash/
 

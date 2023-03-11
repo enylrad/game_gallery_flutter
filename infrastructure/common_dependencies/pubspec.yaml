@@ -17,5 +17,4 @@ dependencies:
   ## Packages
   freezed_annotation: ^2.2.0
   flutter_svg: ^2.0.3
-  flutter_bloc: ^8.1.2
   intl: ^0.17.0

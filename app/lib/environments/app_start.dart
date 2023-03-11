@@ -8,8 +8,6 @@ import 'package:game_gallery/app/my_app.dart';
 import 'package:game_gallery/di/app_component.dart';
 import 'package:game_gallery/resolvers/app_resolver.dart';
 import 'package:game_gallery/resolvers/library_resolver.dart';
-import 'package:home/home.dart';
-import 'package:login/login.dart';
 import 'package:splash/splash.dart';
 
 abstract class AppStart {
@@ -23,8 +21,6 @@ abstract class AppStart {
 
     // Features
     SplashResolver(),
-    HomeResolver(),
-    LoginResolver(),
 
     // App
     AppResolver(),
